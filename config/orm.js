@@ -16,8 +16,10 @@ var orm = {
             cb();
         })
     },
-    update: function(id, cb) {
-        var query = 'UPDATE burgers SET devoured = 1 WHERE id = ' + id;
+    update: function(id, toggle, cb) {
+        console.log(toggle);
+        var query = 'UPDATE burgers SET devoured = ' + toggle + ' WHERE id = ' + id;
+        console.log(query);
         connection.query(query, function(err, data) {
             if (err) throw err;
             cb();

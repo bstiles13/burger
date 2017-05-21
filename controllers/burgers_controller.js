@@ -9,10 +9,6 @@ router.get('/', function(req, res) {
     });
 })
 
-router.get('/test', function(req, res) {
-    res.send('Test');
-})
-
 router.post('/', function(req, res) {
     console.log(req.body);
     burger.create(req.body.name, parseInt(req.body.status), function() {
@@ -20,8 +16,16 @@ router.post('/', function(req, res) {
     })
     });
 
-router.put('/:id', function(req, res) {
-    burger.update(req.params.id, function() {
+router.put('/:id/eat', function(req, res) {
+    var id = req.params.id;
+    burger.update(id, 1, function() {
+        res.redirect('/');
+    })
+})
+
+router.put('/:id/restore', function(req, res) {
+    var id = req.params.id;
+    burger.update(id, 0, function() {
         res.redirect('/');
     })
 })

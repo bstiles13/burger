@@ -5,8 +5,16 @@ html, body {
 }
 
 .main-container {
-    padding-top: 100px;
     text-align: center;
+}
+
+.logo {
+    padding: 30px 0;
+}
+
+.logo img{
+    width: 400px;
+    border-radius: 10%;
 }
 
 .eat:hover {
@@ -24,9 +32,10 @@ html, body {
 }
 
 .burger {
-    padding: 20px 0;
+    padding: 30px 0;
     border: 1px solid orange;
     position: relative;
+    margin: 0 10px 10px 0;
 }
 
 .burger img {
@@ -47,4 +56,8 @@ html, body {
     bottom: 0;
     right: 20px;
     height: 40px;
+}
+
+.add input {
+    margin: 0 10px 10px 10px;
 }

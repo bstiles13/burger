@@ -9,8 +9,9 @@ var burger = {
     create: function(name, status, cb) {
         orm.create('burgers', name, status, cb)
     },
-    update: function(id, cb) {
-        orm.update(id, cb);
+    update: function(id, toggle, cb) {
+        console.log(toggle);
+        orm.update(id, toggle, cb);
     }
 }
 
