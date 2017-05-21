@@ -1,0 +1,51 @@
+<div class='main-container'>
+
+    <div class='burger-box'>
+    <div class='uneaten'>
+    <h2>On the Platter</h2>
+    {{#each burgers}}
+        {{#unless devoured }}
+        <div class='burger'>
+            <form action='/{{id}}?_method=PUT' method='POST'>
+            <img src='http://1.media.collegehumor.cvcdn.com/33/94/c296833d556cf46c714bf5cff593f240.gif' />
+            <span>{{burger_name}}</span>
+            <button class='eat btn btn-info'>Eat</button>
+            </form>
+        </div>
+        {{/unless}}
+    {{/each}}
+    </div>
+    <div class='eaten'>
+    <h2>Eaten Burgers</h2>
+        {{#each burgers}}
+            {{#if devoured}}
+                <div class='burger'>
+                    <img src='http://1.media.collegehumor.cvcdn.com/33/94/c296833d556cf46c714bf5cff593f240.gif' />
+                    <span>{{burger_name}}</span>
+                </div>
+            {{/if}}
+        {{/each}}
+        </div>
+        </div>
+
+    <h2>Add Burger</h2>
+    <form action='/' method='POST'>
+        <input type='text' name='name' />
+        <input type='radio' name='status' value='0' />Uneaten
+        <input type='radio' name='status' value='1' />Eaten
+        <button class='add btn btn-warning'>Add</button>
+    </form>
+
+
+</div>
+
+<!--<script>
+    $(document).ready(function() {
+
+        $('.add').on('click', function(event) {
+            event.preventDefault();
+            console.log($('form').serialize());
+        })
+
+    })
+</script>-->
